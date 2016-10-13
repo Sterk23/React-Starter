@@ -5,11 +5,25 @@
 	<title>Getting started with React</title>
 </head>
 <body>
-		<!--The core React Library-->
-		<script src="https://fb.me/react-15.3.2.js"></script>
-		<!--The ReactDOM Library-->
-		<script src="https://fb.me/react-dom-15.3.2.js"></script>
+	<!-- The core React library -->
+    <script src="https://unpkg.com/react@15.3.2/dist/react.min.js"></script>
+    <!-- The ReactDOM Library -->
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.min.js"></script>
 		
 		<div id="main"></div>
+		
+		<script>
+			var HelloMessage = React.createClass({
+			render:function(){
+				//return <h1> HelloWorld! This is {this.props.name}</h1>;
+				return React.createElement("h1",null,"HelloWorld!,This is ", this.props.name);
+			}
+			});
+			
+			ReactDOM.render(
+				React.createElement(HelloMessage,{name:"Sterk"}),
+				document.getElementById('main')
+			);
+			</script>
 </body>
 </html>
